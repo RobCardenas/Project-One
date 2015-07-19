@@ -11,7 +11,7 @@
 	<title>Project Juan</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="../styles/styles.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -95,112 +95,78 @@
     </div>
   </div>
 
-  	<div class="container">
-  		
-  		<!-- featured design sections -->
-  		<div class="row featured-section">
-  			<div class="col-md-12 text-center">
-  				<h2>Featured Designs</h2>
-  			</div>
-  			<div class="col-md-4">
-  				<img src="img/belanger.jpg" class="img-responsive featured-img" alt="Placeholder">
-  				<p class="featured-text">Black Eagly by Joshua Belanger</p>
-  			</div>
-  			<div class="col-md-4">
-  				<img src="img/horkey.jpg" class="img-responsive featured-img" alt="Placeholder">
-  				<p class="featured-text">Black Lake by Aaron Horkey</p>
-  			</div>
-  			<div class="col-md-4">
-  				<img src="img/finley.jpg" class="img-responsive featured-img" alt="Placeholder">
-  				<p class="featured-text">Black Beauty by Jeff Finley</p>
-  			</div>
+  <div class="container">
+    <!-- trending designs -->
+    <div class="newly-added"></div>
+  </div>
+  	
+  <div class="container">
+    <div class="row header-top">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="text-center">
+          <h1>Submit Your Art</h1>
+            <hr>
+            <form id="new-submission">
+              <div class="form-group">
+                <input type="text" class="form-control" id="artist-name" placeholder="Artist Name" autofocus>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="art-title" placeholder="Artwork Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="img-url" placeholder="Image URL">
+              </div>
+              <div class="form-group">
+              <input type="submit" class="btn btn-default" value="Submit">
+              </div>
+            </form>
+            <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	<!-- footer -->
+  	<div class="footer-div">
+  		<div class="container">
+  			<footer>
+  				<section id="footer-bottom">
+  					<div class="row">
+  						<div class="col">
+  							<ul id="footer-social-links">
+  								<li class="social"><a href="#">Facebook</a></li>
+  								<li class="social"><a href="#">Instagram</a></li>
+  								<li class="social"><a href="#">Twitter</a></li>
+  							</ul>
+  						</div>
+  					</div>
+  				</section>
+  			</footer>
   		</div>
-
-  		<!-- trending designs -->
-
-  		<div class="trending-section">
-  			<div class="col-md-12 text-center">
-  				<h2>Trending Designs</h2>
-  			</div>
-  			<div class="row">
-  				<div class="col-md-4 trending-spacing">
-  					<h3 class="text-center">T-Shirts</h3>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  				</div>
-  				<div class="col-md-4 trending-spacing">
-  					<h3 class="text-center">Posters</h3>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  				</div>
-  				<div class="col-md-4 trending-spacing">
-  					<h3 class="text-center">Albums</h3>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  					<div class="col-md-6 col-xs-6">
-  						<img src="img/placeholder.png" class="img-responsive featured-img" alt="Placeholder">
-  					</div>
-  				</div>
-  			</div>
-  		</div>
-	</div><!-- end container -->
-
-	
-	<div class="footer-div">
-		<div class="container">
-		<footer>
-			<section id="footer-bottom">
-				<div class="row">
-					<div class="col">
-						<ul id="footer-social-links">
-							<li class="social"><a href="#">Facebook</a></li>
-							<li class="social"><a href="#">Instagram</a></li>
-							<li class="social"><a href="#">Twitter</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</footer>
-	</div>
-	</div>
+  	</div>
 
 
-
-
-  	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   	<!-- Latest compiled and minified JavaScript -->
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   	<!-- underscore -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <!-- custom javascript -->
-    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
+
+    <!-- featured design sections -->
+    <script type="text/template" id="submission-template">
+      <div class="row featured-section">
+        <div class="col-md-12 text-center">
+          <h2>Featured Designs</h2>
+        </div>
+        <div class="col-md-3">
+          <img src="<%= artFile %>" id="art-image" class="img-responsive" alt="Artwork">
+          <p class="featured-text" id="artist-design"><%= design %> by <%= artist %></p>
+        </div>
+      </div>
+    </script>
+
   </body>
   </html>
