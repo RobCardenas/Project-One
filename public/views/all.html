@@ -97,6 +97,11 @@
 
   <div class="container">
     <!-- trending designs -->
+    <div class="row featured-section">
+        <div class="col-md-12 text-center">
+          <h2>Featured Designs</h2>
+        </div>
+      </div>
     <div class="newly-added"></div>
   </div>
   	
@@ -108,13 +113,13 @@
             <hr>
             <form id="new-submission">
               <div class="form-group">
-                <input type="text" class="form-control" id="artist-name" placeholder="Artist Name" autofocus>
+                <input type="text" class="form-control" id="artist-name" placeholder="Img URL // 300 x 300 works best" autofocus>
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" id="art-title" placeholder="Artwork Name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="img-url" placeholder="Image URL">
+                <input type="text" class="form-control" id="img-url" placeholder="Artist Name">
               </div>
               <div class="form-group">
               <input type="submit" class="btn btn-default" value="Submit">
@@ -157,15 +162,12 @@
 
     <!-- featured design sections -->
     <script type="text/template" id="submission-template">
-      <div class="row featured-section">
-        <div class="col-md-12 text-center">
-          <h2>Featured Designs</h2>
-        </div>
+      
         <div class="col-md-3">
           <img src="<%= artFile %>" id="art-image" class="img-responsive" alt="Artwork">
           <p class="featured-text" id="artist-design"><%= design %> by <%= artist %></p>
         </div>
-      </div>
+      
     </script>
 
   </body>
