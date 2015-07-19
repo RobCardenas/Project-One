@@ -1,0 +1,85 @@
+/*main elements*/
+body {
+	background: #fff;
+}
+
+/*nav bar*/
+
+.navbar-inverse {
+  background-color: #181818;
+  border-color: transparent;
+}
+
+.navbar {
+  border-radius: 0;
+}
+
+/* main content / featured */
+
+.featured-text {
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+
+.featured-section {
+	margin-top: 20px;
+}
+
+.featured-img {
+	margin-top: 20px;
+}
+
+/*trending designs*/
+
+.trending-section {
+	margin-top: 100px;
+}
+
+.trending-spacing .col-md-6 {
+	padding: 4px;
+	margin: 0;
+}
+
+.trending-img {
+	margin-bottom: 20px;
+}
+
+/*footer*/
+
+.social a {
+	color: #fff;
+}
+
+.social a:hover {
+	color: #1772e8;
+	text-decoration: none;
+}
+
+footer#footer-social-links {
+  	margin: 0px 0px 0px 0px;
+  	padding: 0;
+}
+
+footer ul li {
+	display: block;
+  	float: left;
+	list-style: none;
+  	padding: 0;
+  	margin: 0 0 10px 25px;
+}
+
+#footer-bottom {
+ 	border-top: 1px solid #272822;
+ 	margin-top: 30px;
+  	padding-top: 10px;
+}
+
+.footer-div {
+	background: #181818;
+	margin-top: 30px;
+}
+
+/*media queries*/
+
