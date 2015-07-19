@@ -1,7 +1,8 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
-	mongoose = require('mongoose');
+	mongoose = require('mongoose'),
+	_ = require("underscore");
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -30,16 +31,26 @@ app.get('/api/posts', function (req, res) {
   });
 });
 
+// route for single id
+app.get('/api/posts/:id', function (req, res) {
+	//set the value of the id
+    var targetId = req.params.id;
+    //find correct post in the db by id
+    Post.findOne({_id: targetId}, function (err, foundPost) {
+      res.json(foundPost);
+    });
+  });
+
 // create new post
 app.post('/api/posts', function (req, res) {
-  // create new instance of Log
+  // create new instance of art post
   var newPost = new Post({
 	artFile: req.body.artFile,
 	design: req.body.design,
     artist: req.body.artist
   });
 
-  // save new log in db
+  // save new post in db
   newPost.save(function (err, savedPost) {
     res.json(savedPost);
   });
