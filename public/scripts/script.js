@@ -1,13 +1,5 @@
 $(function() {
 
-    $('.newly-added').masonry({
-  // set itemSelector so .grid-sizer is not used in layout
-  itemSelector: '.art-images',
-  // use element for option
-  columnWidth: '.col-md-3',
-  percentPosition: true
-})
-
   // postsController holds functionality
   var postsController = {
     
