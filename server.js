@@ -81,9 +81,9 @@ app.post('/signup', function (req, res) {
 // authenticate user and set session
 app.post('/login', function (req, res) {
   var userData = req.body.user;
-  User.authenticate(userData.userName, userData.password, function (err, user) {
+  User.authenticate(userData.email, userData.password, function (err, user) {
     req.login(user);
-    res.redirect('/');
+    res.redirect('/home');
   });
 });
 
@@ -92,6 +92,8 @@ app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/home');
 });
+
+
 
 // API ROUTES
 // show all posts
