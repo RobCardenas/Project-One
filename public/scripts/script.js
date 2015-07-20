@@ -1,5 +1,11 @@
 $(function() {
 
+    $('.newly-added').masonry({
+    // options
+    itemSelector: '.art-images',
+    columnWidth: 200
+});
+
   // postsController holds functionality
   var postsController = {
     
