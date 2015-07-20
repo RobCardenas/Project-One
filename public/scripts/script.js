@@ -4,7 +4,7 @@ $(function() {
   // set itemSelector so .grid-sizer is not used in layout
   itemSelector: '.art-images',
   // use element for option
-  columnWidth: '.grid-sizer',
+  columnWidth: '.col-md-3',
   percentPosition: true
 })
 
