@@ -52,10 +52,10 @@
   					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   					<h4 class="modal-title" id="myModalLabel">Sign Up</h4>
   				</div>
-  				<form method="post" action="/users">
+  				<form method="post" action="/signup">
   					<div class="modal-body">
   						<div class="form-group">
-  							<input type="text" name="user[firstName]" class="form-control" placeholder="User Name">
+  							<input type="text" name="user[userName]" class="form-control" placeholder="User Name">
   						</div>
   						<div class="form-group">
   							<input type="email" name="user[email]" class="form-control" placeholder="Email">
@@ -84,7 +84,7 @@
   				<form method="post" action="/login">
   					<div class="modal-body">
   						<div class="form-group">
-  							<input type="email" name="user[email]" class="form-control" placeholder="Email">
+  							<input type="email" name="user[userName]" class="form-control" placeholder="User Name">
   						</div>
   						<div class="form-group">
   							<input type="password" name="user[password]" class="form-control" placeholder="Password">

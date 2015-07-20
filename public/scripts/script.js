@@ -24,7 +24,7 @@ $(function() {
     },
 
     // create new art post
-    create: function(imgData, designData, artistData) {
+    create: function(artistData, designData, imgData) {
       // define new object with postData
       var postData = {artist: artistData, design: designData, artFile: imgData};
       
