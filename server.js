@@ -6,9 +6,6 @@ var express = require('express'),
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-// variable to test seed data
-var artPosts = [];
-
 // serve js and css files from public folder
 app.use(express.static(__dirname + '/public'));
 
@@ -29,7 +26,7 @@ var Post = require("./models/model");
 mongoose.connect('mongodb://localhost/project-one');
 
 // API ROUTES
-// show all logs
+// show all posts
 app.get('/api/posts', function (req, res) {
   Post.find(function (err, posts) {
     res.json(posts);
@@ -58,6 +55,29 @@ app.get('/api/posts/:id', function (req, res) {
     //find correct post in the db by id
     Post.findOne({_id: targetId}, function (err, foundPost) {
       res.json(foundPost);
+    });
+  });
+
+app.put('/api/posts/:id', function (req,res) {
+  var targetId = req.params.id;
+  Post.findOne({_id: targetId}, function(err, foundPost) {
+    foundPost.artFile = req.body.artFile;
+    foundPost.design = req.body.design;
+    foundPost.artist = req.body.artist;
+
+    foundPost.save(function (err,savedPost) {
+      res.json(savedPost);
+    });
+  });
+});
+
+// delete post
+app.delete('/api/posts/:id', function (req, res) {
+    //set the value of the desired id
+    var targetId = req.params.id;
+    //find the correct post in the db and remove it
+    Post.findOneAndRemove({_id: targetId}, function (err, deletedPost) {
+      res.json(deletedPost);
     });
   });
 

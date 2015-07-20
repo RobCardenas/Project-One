@@ -6,9 +6,9 @@ $(function() {
     // compile underscore template
     template: _.template($('#submission-template').html()),
 
-    // get all logs
+    // get all posts
     all: function() {
-      // AJAX call to server to GET /api/logs
+      // AJAX call to server to GET /api/posts
       $.get('/api/posts', function(allPosts) {
         
         // iterate through all posts

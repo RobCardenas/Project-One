@@ -17,18 +17,12 @@ h1, h2, h3 {
 }
 
 .navbar-brand {
-	background: url('../img/cARTel.png');
-	background-repeat: no-repeat;
-	width: 147px;
-	margin-top: 15px;
+	vertical-align: baseline;
+	padding-top: 12px;
 }
 
 .navbar {
   border-radius: 0;
-}
-
-.navbar-nav {
-	margin: 5px 0 0 20px;
 }
 
 /* main content / featured */
@@ -45,7 +39,7 @@ h2.featured {
 
 
 .featured-section {
-	margin: 10px 0 25px 0;
+	margin: 60px 0 25px 0;
 }
 
 .glyphicon-heart {
