@@ -27,7 +27,13 @@ h1, h2, h3 {
 
 /* all pages */
 
-.art-images { width: 200px; }
+.col-md-3 { 
+	width: 25%; 
+}
+
+.col-xs-6 { 
+	width: 50%; 
+}
 
 /* main content / featured */
 
