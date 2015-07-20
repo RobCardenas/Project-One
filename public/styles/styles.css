@@ -28,11 +28,13 @@ h1, h2, h3 {
 /* all pages */
 
 .col-md-3 { 
-	width: 25%; 
+	width: 25%;
+	float: left; 
 }
 
 .col-xs-6 { 
-	width: 50%; 
+	width: 50%;
+	float: left; 
 }
 
 /* main content / featured */

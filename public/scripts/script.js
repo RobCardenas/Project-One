@@ -6,6 +6,14 @@ $(function() {
     columnWidth: 200
 });
 
+    // init Masonry
+var $grid = $('.newly-added').masonry({
+});
+// layout Masonry after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
+});
+
   // postsController holds functionality
   var postsController = {
     
