@@ -83,14 +83,14 @@ app.post('/login', function (req, res) {
   var userData = req.body.user;
   User.authenticate(userData.email, userData.password, function (err, user) {
     req.login(user);
-    res.redirect('/home');
+    res.redirect('/');
   });
 });
 
 // log out user (destroy session)
 app.get('/logout', function (req, res) {
   req.logout();
-  res.redirect('/home');
+  res.redirect('/');
 });
 
 
