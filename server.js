@@ -12,9 +12,14 @@ var artPosts = [];
 // serve js and css files from public folder
 app.use(express.static(__dirname + '/public'));
 
-// root route (serves index.html)
+// root route (serves all.html)
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/views/all.html');
+});
+
+// root route (serves all.html)
+app.get('/home', function (req, res) {
+  res.sendFile(__dirname + '/public/views/index.html');
 });
 
 // include our module from the other file
@@ -31,16 +36,6 @@ app.get('/api/posts', function (req, res) {
   });
 });
 
-// route for single id
-app.get('/api/posts/:id', function (req, res) {
-	//set the value of the id
-    var targetId = req.params.id;
-    //find correct post in the db by id
-    Post.findOne({_id: targetId}, function (err, foundPost) {
-      res.json(foundPost);
-    });
-  });
-
 // create new post
 app.post('/api/posts', function (req, res) {
   // create new instance of art post
@@ -55,6 +50,16 @@ app.post('/api/posts', function (req, res) {
     res.json(savedPost);
   });
 });
+
+// route for single id
+app.get('/api/posts/:id', function (req, res) {
+	//set the value of the id
+    var targetId = req.params.id;
+    //find correct post in the db by id
+    Post.findOne({_id: targetId}, function (err, foundPost) {
+      res.json(foundPost);
+    });
+  });
 
 
 

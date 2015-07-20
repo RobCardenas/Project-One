@@ -1,6 +1,6 @@
 /*main elements*/
 body {
-	background: #fff;
+	background: #fcfcfc;
 	font-family: 'PT Sans', sans-serif;
 }
 
@@ -33,6 +33,10 @@ h1, h2, h3 {
 
 /* main content / featured */
 
+h2.featured {
+	margin-bottom: 20px;
+}
+
 .featured-text {
 	font-size: 1em;
 	font-weight: bold;
@@ -44,14 +48,27 @@ h1, h2, h3 {
 	margin: 10px 0 25px 0;
 }
 
-.featured-img {
-	margin-top: 20px;
+.glyphicon-heart {
+	color: red;
 }
 
 /* submission form */
 
 .submission-form {
 	margin-top: 40px;
+}
+
+.btn-custom {
+	color: #fff;
+  	text-decoration: none;
+  	/*background: #9d0000;*/
+  	background: linear-gradient(to top left, #9d0000, #f10101);
+  	font-size: 1.2em;
+}
+
+.btn-custom:hover {
+	color: #fff;
+  	background: #9d0000;
 }
 
 /*trending designs*/
@@ -96,6 +113,7 @@ footer ul li {
 #footer-bottom {
  	border-top: 1px dotted #acacac;
  	margin-top: 30px;
+ 	margin-bottom: 20px;
   	padding-top: 10px;
 }
 
