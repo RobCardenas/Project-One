@@ -1,18 +1,12 @@
 $(function() {
 
     $('.newly-added').masonry({
-    // options
-    itemSelector: '.art-images',
-    columnWidth: 200
-});
-
-    // init Masonry
-var $grid = $('.newly-added').masonry({
-});
-// layout Masonry after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry('layout');
-});
+  // set itemSelector so .grid-sizer is not used in layout
+  itemSelector: '.art-images',
+  // use element for option
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+})
 
   // postsController holds functionality
   var postsController = {
