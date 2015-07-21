@@ -139,8 +139,7 @@ footer ul li {
 @media (min-width: 480px) { 
 	.grid-sizer,
 	.art-images {
-  		width: 23%;
-  		margin: 1%;
+  		width: 25%;
 	}
 }
 
@@ -148,8 +147,7 @@ footer ul li {
 @media (max-width: 767px) {
 	.grid-sizer,
 	.art-images {
-  		width: 47%;
-  		margin: 1%;
+  		width: 50%;
 	}
 }
 
@@ -157,8 +155,7 @@ footer ul li {
 @media (min-width: 768px) and (max-width: 979px) {
 	.grid-sizer,
 	.art-images {
-  		width: 31.3333%;
-  		margin: 1%;
+  		width: 33.3333%;
 	}
 }
 
@@ -166,8 +163,7 @@ footer ul li {
 @media (min-width: 1200px) {
 	.grid-sizer,
 	.art-images {
-  		width: 23.8%;
-  		margin: .6%;
+  		width: 25%;
 	}
 }
 
