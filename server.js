@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/views/all.html');
 });
 
-// root route (serves all.html)
+// route (index.html)
 app.get('/home', function (req, res) {
   res.sendFile(__dirname + '/public/views/index.html');
 });
@@ -87,12 +87,11 @@ app.post('/login', function (req, res) {
   });
 });
 
-// log out user (destroy session)
+// logout route
 app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });
-
 
 
 // API ROUTES

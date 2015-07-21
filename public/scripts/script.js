@@ -77,6 +77,16 @@ $(function() {
 
 });
 
+// vote onclick
+  var $votes = 0;
+    $(".glyphicon-thumbs-up").on("click", function(event) {
+        event.preventDefault();
+        console.log($votes);
+        $votes += 1;
+        console.log($votes);
+        $(this).html($votes);
+    });
+
 
 
 
