@@ -35,7 +35,7 @@ $(function() {
         var $postHtml = $(postsController.template(newPost));
 
         // prepends new artpost to the view
-        $('#newly-added').prepend($postHtml);
+        $('.newly-added').prepend($postHtml);
       });
     },
 
@@ -65,6 +65,9 @@ $(function() {
   postsController.setupView();
 
 });
+
+
+
 
 
 

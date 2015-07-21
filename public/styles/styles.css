@@ -121,20 +121,57 @@ footer ul li {
 
 /*media queries*/
 
-@media screen and (max-width: 480px){
-	#newly-added[data-columns]::before {
-		content: '2 .column.size-1of2';
+.art-images {
+	float: left;
+    background: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-sizing: border-box;
+}
+
+.art-images img {
+  	display: block;
+  	max-width: 100%;
+}
+
+/* Landscape phones and down */
+@media (min-width: 480px) { 
+	.grid-sizer,
+	.art-images {
+  		width: 23%;
+  		margin: 1%;
 	}
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
-	#newly-added[data-columns]::before {
-		content: '2 .column.size-1of2';
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.grid-sizer,
+	.art-images {
+  		width: 47%;
+  		margin: 1%;
 	}
 }
-@media screen and (min-width: 769px) {
-	#newly-added[data-columns]::before {
-		content: '4 .column.size-1of4';
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	.grid-sizer,
+	.art-images {
+  		width: 31.3333%;
+  		margin: 1%;
 	}
 }
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	.grid-sizer,
+	.art-images {
+  		width: 23.8%;
+  		margin: .6%;
+	}
+}
+
+
+
+
 
