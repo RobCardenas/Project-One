@@ -83,7 +83,7 @@ app.post('/login', function (req, res) {
   var userData = req.body.user;
   User.authenticate(userData.email, userData.password, function (err, user) {
     req.login(user);
-    res.redirect('/');
+    res.redirect('/home');
   });
 });
 

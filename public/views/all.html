@@ -106,7 +106,7 @@
           <h2>Recently Added</h2>
         </div>
       </div>
-    <div class="newly-added"></div>
+    <div class="newly-added" data-columns></div>
   </div>
   	
   <div class="container">
@@ -163,13 +163,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <!-- custom javascript -->
     <script type="text/javascript" src="../scripts/script.js"></script>
-
+    <!-- salvattore.js -->
+    <script type="text/javascript" src="https://raw.githubusercontent.com/rnmp/salvattore/master/dist/salvattore.min.js"></script>
     <!-- featured design sections -->
     <script type="text/template" id="submission-template">
       
         <div class="col-md-3 col-xs-6 art-images">
-          <img src="<%= artFile %>" id="art-image" class="img-responsive" alt="Artwork">
-          <p class="featured-text" id="artist-design"><%= design %> by <%= artist %></p>
+          <img src="<%= artFile %>" class="img-responsive" alt="Artwork">
+          <p class="featured-text"><%= design %> by <%= artist %></p>
         </div>
       
     </script>
