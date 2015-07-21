@@ -4,7 +4,7 @@ $(function() {
     $grid.masonry({
       itemSelector: '.art-images',
       percentPosition: true,
-      // columnWidth: '.grid-sizer'
+      columnWidth: '.grid-sizer'
     }); 
   });
 });
