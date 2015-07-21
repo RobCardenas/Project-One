@@ -49,6 +49,12 @@ h2.featured {
 	color: red;
 }
 
+.glyphicon-thumbs-up {
+	float: right;
+	cursor: pointer;
+}
+
+
 /* submission form */
 
 .submission-form {
@@ -128,6 +134,7 @@ footer ul li {
     padding: 10px;
     border: 1px solid #ddd;
     border-sizing: border-box;
+    margin-bottom: 1%;
 }
 
 .art-images img {
@@ -135,11 +142,15 @@ footer ul li {
   	max-width: 100%;
 }
 
+.gutter-sizer {
+  width: 1%;
+}
+
 /* Landscape phones and down */
 @media (min-width: 480px) { 
 	.grid-sizer,
 	.art-images {
-  		width: 25%;
+  		width: 24%;
 	}
 }
 
@@ -147,7 +158,7 @@ footer ul li {
 @media (max-width: 767px) {
 	.grid-sizer,
 	.art-images {
-  		width: 50%;
+  		width: 48%;
 	}
 }
 
@@ -155,7 +166,7 @@ footer ul li {
 @media (min-width: 768px) and (max-width: 979px) {
 	.grid-sizer,
 	.art-images {
-  		width: 33.3333%;
+  		width: 31.3333%;
 	}
 }
 
@@ -163,7 +174,7 @@ footer ul li {
 @media (min-width: 1200px) {
 	.grid-sizer,
 	.art-images {
-  		width: 25%;
+  		width: 24%;
 	}
 }
 

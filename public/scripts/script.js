@@ -1,5 +1,16 @@
 $(function() {
 
+  // init Masonry after all images have loaded
+  var $grid = $('.newly-added').imagesLoaded( function() {
+    $grid.masonry({
+      itemSelector: '.art-images',
+      isAnimated: true,
+      columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
+      percentPosition: true
+    }); 
+  });
+
   // postsController holds functionality
   var postsController = {
     
