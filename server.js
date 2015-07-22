@@ -3,7 +3,7 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	_ = require("underscore"),
-	session = require('express-session')
+	session = require('express-session'),
 	config = require('./config');
 
 app.use(bodyParser.urlencoded({extended: true}));
