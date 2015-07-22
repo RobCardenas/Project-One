@@ -163,4 +163,4 @@ app.delete('/api/posts/:id', function (req, res) {
   });
 
 
-app.listen(config.PORT);
+app.listen(process.env.PORT || 3000);
