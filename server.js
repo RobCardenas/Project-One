@@ -28,7 +28,11 @@ var Post = require("./models/model");
 var User = require('./models/user');
 
 // connect to db
-mongoose.connect(config.MONGO_URI);
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/project-one' 
+);
 
 // middleware
 app.use(bodyParser.urlencoded({extended: true}));
