@@ -5,7 +5,8 @@ var mongoose = require('mongoose'),
 var PostSchema = new Schema({
 	artist: String,
 	design: String,
-	artFile: String
+	artFile: String,
+	votes: Number
 });
 
 var Post = mongoose.model('Post', PostSchema);

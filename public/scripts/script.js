@@ -1,17 +1,26 @@
 $(function() {
 
-  // init Masonry after all images have loaded
+      // init Masonry after all images have loaded
   var $grid = $('.newly-added').imagesLoaded( function() {
     $grid.masonry({
       itemSelector: '.art-images',
       isAnimated: true,
-      columnWidth: '.grid-sizer',
+      columnWidth: '.art-images',
       gutter: '.gutter-sizer',
       percentPosition: true
-    }); 
+    });
+    // $('.newly-added').imagefill(); 
   });
 
-  console.log($grid);
+  $('#signUpForm').validate({
+       errorClass: "my-error-class",
+       validClass: "my-valid-class"
+    });
+  $('#loginForm').validate({
+       errorClass: "my-error-class",
+       validClass: "my-valid-class"
+    });
+
 
   // postsController holds functionality
   var postsController = {
@@ -97,6 +106,9 @@ $(function() {
         $('.modal:visible').each(centerModal);
     });
 })(jQuery);
+
+
+
 
 
 

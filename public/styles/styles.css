@@ -133,13 +133,11 @@ footer ul li {
     border-radius: 2px;
     padding: 10px;
     border: 1px solid #ddd;
-    border-sizing: border-box;
     margin-bottom: 1%;
 }
 
 .art-images img {
   	display: block;
-  	max-width: 100%;
 }
 
 .gutter-sizer {
@@ -176,6 +174,13 @@ footer ul li {
 	.art-images {
   		width: 24%;
 	}
+}
+
+.my-error-class {
+    color: #f10101;  
+}
+.my-valid-class {
+    color: #00CC00; 
 }
 
 

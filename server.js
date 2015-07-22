@@ -3,7 +3,8 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	_ = require("underscore"),
-	session = require('express-session');
+	session = require('express-session')
+	config = require('./config');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -27,11 +28,7 @@ var Post = require("./models/model");
 var User = require('./models/user');
 
 // connect to db
-mongoose.connect(
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/project-one' // plug in the db name you've been using
-);
+mongoose.connect(config.MONGO_URI);
 
 // middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -40,7 +37,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(session({
   saveUninitialized: true,
   resave: true,
-  secret: 'SuperSecretCookie',
+  secret: config.SESSION_SECRET,
   cookie: { maxAge: 60000 }
 }));
 
@@ -88,11 +85,21 @@ app.post('/login', function (req, res) {
 });
 
 // logout route
-app.get('/logout', function (req, res) {
+app.post('/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });
 
+// route to update votes
+app.put('/api/posts/:id', function (req,res) {
+  var targetId = req.params.id;
+  Post.findOne({_id: targetId}, function(err, foundPost) {
+    foundPost.votes = req.body.votes;
+	foundPost.save(function (err,savedPost) {
+      res.json(savedPost);
+    });
+  });
+});
 
 // API ROUTES
 // show all posts
@@ -152,8 +159,4 @@ app.delete('/api/posts/:id', function (req, res) {
   });
 
 
-// server
-// app.listen(3000, function() {
-// 	console.log('localhost now running.')
-// });
-app.listen(process.env.PORT || 3000);
+app.listen(config.PORT);
