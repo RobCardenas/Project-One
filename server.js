@@ -28,11 +28,7 @@ var Post = require("./models/model");
 var User = require('./models/user');
 
 // connect to db
-mongoose.connect(
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/project-one' 
-);
+mongoose.connect(config.MONGO_URI);
 
 // middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -94,17 +90,6 @@ app.post('/logout', function (req, res) {
   res.redirect('/');
 });
 
-// route to update votes
-app.put('/api/posts/:id', function (req,res) {
-  var targetId = req.params.id;
-  Post.findOne({_id: targetId}, function(err, foundPost) {
-    foundPost.votes = req.body.votes;
-	foundPost.save(function (err,savedPost) {
-      res.json(savedPost);
-    });
-  });
-});
-
 // API ROUTES
 // show all posts
 app.get('/api/posts', function (req, res) {
@@ -163,4 +148,4 @@ app.delete('/api/posts/:id', function (req, res) {
   });
 
 
-app.listen(process.env.PORT || 3000);
+app.listen(config.PORT);
