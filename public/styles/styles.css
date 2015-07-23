@@ -45,6 +45,14 @@ h2.featured {
 	margin: 60px 0 25px 0;
 }
 
+.submission-section {
+	margin: 60px 0 0 0;
+}
+
+.welcome-msg {
+	margin-left: 10px;
+}
+
 .glyphicon-heart {
 	color: red;
 }

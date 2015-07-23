@@ -1,62 +1,102 @@
 // profile JS
-// $(function() {
+$(function() {
 
-//     var artistsController = {
+      // init Masonry after all images have loaded
+  var $grid = $('.user-newly-added').imagesLoaded( function() {
+    $grid.masonry({
+      itemSelector: '.art-images',
+      columnWidth: '.art-images',
+      gutter: '.gutter-sizer',
+      percentPosition: true,
+      isAnimated: !Modernizr.csstransitions
+    });
+  });
 
-//         // userTemplate: _.template($('#user-template').html()),
-//         postTemplate: _.template($('#user-submission-template').html()),
+  $('#signUpForm').validate({
+       errorClass: "my-error-class",
+       validClass: "my-valid-class"
+    });
+  $('#loginForm').validate({
+       errorClass: "my-error-class",
+       validClass: "my-valid-class"
+    });
 
-//     show: function() {
-//         // get current user (logged in)
-//         $.get('/api/users/current', function(user) {
-//             $artistHtml = $(artistsController.userTemplate({currentUser: user}));
-//             $('#show-user').append($artistHtml);
-//             _.each(user.posts, function(post, index) {
-//                 $postHtml = $(artistsController.postTemplate(post));
-//             $('#user-post-list').prepend($postHtml);
-//             });
-//         });
-//     },
+    var artistsController = {
 
-//     // create post for logged in user
-//     createPost: function(artistData, designData, imgData) {
-//       // define new object with postData
-//       var postData = {design: designData, artFile: imgData};
+        userTemplate: _.template($('#user-template').html()),
+        postTemplate: _.template($('#user-submission-template').html()),
+
+    show: function() {
+        // get current user (logged in)
+        $.get('/api/users/current', function(user) {
+            $artistHtml = $(artistsController.userTemplate({currentUser: user}));
+            $('#show-user').append($artistHtml);
+            _.each(user.posts, function(post, index) {
+                $postHtml = $(artistsController.postTemplate(post));
+            $('.user-newly-added').prepend($postHtml);
+            });
+        });
+    },
+
+    // create post for logged in user
+    createPost: function(artistData, designData, imgData) {
+      // define new object with postData
+      var postData = {artist: artistData, design: designData, artFile: imgData};
       
-//       // POST AJAX call
-//       $.post('/api/users/current/posts', postData, function(newPost) {
+      // POST AJAX call
+      $.post('/api/users/current/posts', postData, function(newPost) {
         
-//         // underscore template
-//         var $postHtml = $(artistsController.postTemplate(newPost));
+        // underscore template
+        var $postHtml = $(artistsController.postTemplate(newPost));
 
-//         // prepends new artpost to the view
-//         $('.newly-added').prepend($postHtml);
-//       });
-//     },
+        // prepends new artpost to the view
+        $('.user-newly-added').prepend($postHtml);
+      });
+    },
 
-//     setupView: function() {
-//       // render all the art posts to page
-//       artistsController.show();
+    setupView: function() {
+      // render all the art posts to page
+      artistsController.show();
 
-//       // prevent default on submit
-//       $('#new-submission').on('submit', function(event) {
-//         event.preventDefault();
+      // prevent default on submit
+      $('#new-user-submission').on('submit', function(event) {
+        event.preventDefault();
         
-//         // grab values from post form
-//         var artTitle = $('#art-title').val();
-//         var imgUrl = $('#img-url').val();
+        // grab values from post form
+        var artistName = $('#artist-name').val();
+        var artTitle = $('#art-title').val();
+        var imgUrl = $('#img-url').val();
 
-//         // create new post
-//         artistsController.createPost(artistName, artTitle, imgUrl);
+        // create new post
+        artistsController.createPost(artistName, artTitle, imgUrl);
 
-//         // reset the form
-//         $(this)[0].reset();
-//         $('#artist-name').focus();
-//       });
-//     }
-//   };
+        // reset the form
+        $(this)[0].reset();
+        $('#artist-name').focus();
+      });
+    }
+  };
 
-//   postsController.setupView();
+  artistsController.setupView();
 
-// });
+});
+
+(function ($) {
+    "use strict";
+    function centerModal() {
+        $(this).css('display', 'block');
+        var $dialog  = $(this).find(".modal-dialog"),
+        offset       = ($(window).height() - $dialog.height()) / 2,
+        bottomMargin = parseInt($dialog.css('marginBottom'), 10);
+
+        // Make sure you don't hide the top part of the modal w/ a negative margin if it's longer than the screen height, and keep the margin equal to the bottom margin of the modal
+        if(offset < bottomMargin) offset = bottomMargin;
+        $dialog.css("margin-top", offset);
+    }
+
+    $(document).on('show.bs.modal', '.modal', centerModal);
+    $(window).on("resize", function () {
+        $('.modal:visible').each(centerModal);
+    });
+})(jQuery);
 

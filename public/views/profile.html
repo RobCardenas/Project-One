@@ -97,17 +97,19 @@
 
   <div class="container">
     <!-- trending designs -->
-    <div class="row featured-section">
+    <div class="row submission-section">
         <div class="col-md-12 text-center">
           <h2>Your Additions</h2>
         </div>
       </div>
-      <div id="show-user">
-      <!-- <script type="text/template" id="user-template">
-        <div class="col-md-3">Welcome <%= currentUser.email %>!</div>
-      </script> -->
+      <div class="row" id="show-user">
+        <script type="text/template" id="user-template">
+        <div class="row">
+          <div class="col-md-12"><h2 class="welcome-msg">Welcome <%= currentUser.userName %>!</h2></div>
+         </div>
+        </script>
       </div>
-    <div class="newly-added"></div>
+    <div class="user-newly-added"></div>
   </div>
   	
   <div class="container">
@@ -116,7 +118,7 @@
         <div class="text-center">
           <h2>Submit Your Art</h2>
             <hr>
-            <form id="new-submission">
+            <form id="new-user-submission">
               <div class="form-group">
                 <input type="text" class="form-control" id="artist-name" placeholder="Artist" autofocus>
               </div>
@@ -171,8 +173,9 @@
     <!-- modernizr.js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <!-- custom javascript -->
-    <script type="text/javascript" src="../scripts/script.js"></script>
-    <script type="text/template" id="submission-template">
+    <!-- // <script type="text/javascript" src="../scripts/script.js"></script> -->
+    <script type="text/javascript" src="../scripts/profile.js"></script>
+    <script type="text/template" id="user-submission-template">
         <div class="grid-sizer"></div>
         <div class="gutter-sizer"></div>
         <div class="art-images">

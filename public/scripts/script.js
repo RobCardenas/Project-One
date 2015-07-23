@@ -25,7 +25,7 @@ $(function() {
   var postsController = {
     
     // compile underscore template
-    template: _.template($('#submission-template').html()),
+    subTemplate: _.template($('#submission-template').html()),
 
     // get all posts
     all: function() {
@@ -36,7 +36,7 @@ $(function() {
         _.each(allPosts, function(post, index) {
           
           // underscore template
-          var $postHtml = $(postsController.template(post));
+          var $postHtml = $(postsController.subTemplate(post));
           
           // prepend newly added post to HTML to page
           $('.newly-added').prepend($postHtml);
@@ -53,7 +53,7 @@ $(function() {
       $.post('/api/posts', postData, function(newPost) {
         
         // underscore template
-        var $postHtml = $(postsController.template(newPost));
+        var $postHtml = $(postsController.subTemplate(newPost));
 
         // prepends new artpost to the view
         $('.newly-added').prepend($postHtml);
