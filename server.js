@@ -4,28 +4,9 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	_ = require("underscore"),
 	session = require('express-session'),
-	config = require('./config');
-
-app.use(bodyParser.urlencoded({extended: true}));
-
-// serve js and css files from public folder
-app.use(express.static(__dirname + '/public'));
-
-// root route (serves all.html)
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/views/all.html');
-});
-
-// route (index.html)
-app.get('/home', function (req, res) {
-  res.sendFile(__dirname + '/public/views/index.html');
-});
-
-// include our module from the other file
-var Post = require("./models/model");
-
-// include user module
-var User = require('./models/user');
+	config = require('./config'),
+	Post = require('./models/model'),
+	User = require('./models/user');
 
 // connect to db
 mongoose.connect(config.MONGO_URI);
@@ -65,13 +46,36 @@ app.use('/', function (req, res, next) {
   next();
 });
 
-// create new user with secure password
-app.post('/signup', function (req, res) {
+// all page
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/views/all.html');
+});
+
+// route (index.html)
+app.get('/home', function (req, res) {
+  res.sendFile(__dirname + '/public/views/index.html');
+});
+
+
+// user profile page
+app.get('/profile', function (req, res) {
+	//check for current user
+	req.currentUser(function (err, user) {
+		if (user) {
+			res.sendFile(__dirname + '/public/views/profile.html')
+		} else {
+			res.redirect('/home');
+		}
+	});
+});
+
+// create new user with strong and secure password
+app.post('/users', function (req, res) {
   var newUser = req.body.user;
   User.createSecure(newUser, function (err, user) {
     // log in user immediately when created
     req.login(user);
-    res.redirect('/');
+    res.redirect('/profile');
   });
 });
 
@@ -80,17 +84,44 @@ app.post('/login', function (req, res) {
   var userData = req.body.user;
   User.authenticate(userData.email, userData.password, function (err, user) {
     req.login(user);
-    res.redirect('/home');
+    res.redirect('/profile');
   });
 });
 
 // logout route
 app.post('/logout', function (req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/home');
 });
 
 // API ROUTES
+
+//show logged in user
+app.get('/api/users/current', function (req, res) {
+	req.currentUser(function (err, user) {
+		res.json(user);
+	});
+});
+
+
+// create new post
+app.post('/api/users/current/posts', function (req, res) {
+  // create new instance of art post
+  var newPost = new Post({
+	artist: req.body.artist,
+	design: req.body.design,
+    artFile: req.body.artFile
+  });
+
+  // save new post in db
+  newPost.save();
+  req.currentUser(function (err, user) {
+  	user.posts.push(newPost);
+  	user.save();
+  	res.json(newPost);
+  });
+});
+
 // show all posts
 app.get('/api/posts', function (req, res) {
   Post.find(function (err, posts) {
@@ -100,17 +131,16 @@ app.get('/api/posts', function (req, res) {
 
 // create new post
 app.post('/api/posts', function (req, res) {
-  // create new instance of art post
-  var newPost = new Post({
+	var newPost = new Post({
 	artist: req.body.artist,
 	design: req.body.design,
     artFile: req.body.artFile
-  });
+	});
 
-  // save new post in db
-  newPost.save(function (err, savedPost) {
-    res.json(savedPost);
-  });
+	// save new post
+	newPost.save(function (err, savedPost) {
+		res.json(savedPost);
+	});
 });
 
 // route for single id

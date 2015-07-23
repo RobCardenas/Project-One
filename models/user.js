@@ -1,13 +1,15 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     bcrypt = require('bcrypt'),
-    salt = bcrypt.genSaltSync(10);
+    salt = bcrypt.genSaltSync(10),
+    Post = require('./model');
 
 // user schema
 var UserSchema = new Schema({
   userName: String,
   email: String,
-  passwordDigest: String
+  passwordDigest: String,
+  posts: [Post.schema]
 });
 
 // create a new user with hashed password
