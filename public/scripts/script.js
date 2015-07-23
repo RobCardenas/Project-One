@@ -4,12 +4,11 @@ $(function() {
   var $grid = $('.newly-added').imagesLoaded( function() {
     $grid.masonry({
       itemSelector: '.art-images',
-      isAnimated: true,
       columnWidth: '.art-images',
       gutter: '.gutter-sizer',
-      percentPosition: true
+      percentPosition: true,
+      isAnimated: !Modernizr.csstransitions
     });
-    // $('.newly-added').imagefill(); 
   });
 
   $('#signUpForm').validate({
