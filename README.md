@@ -23,4 +23,4 @@ You will each need to turn in an individual project, but you will move faster an
 * npm install --save
 * voila
 
-# ![]() 
+# ![](https://raw.githubusercontent.com/RobCardenas/Project-One/master/public/img/project-one-screenshot.png) 
