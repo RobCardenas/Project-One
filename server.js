@@ -88,8 +88,8 @@ app.post('/login', function (req, res) {
   });
 });
 
-// logout route
-app.post('/logout', function (req, res) {
+// log out user (destroy session)
+app.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/home');
 });

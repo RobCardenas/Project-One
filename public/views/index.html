@@ -30,11 +30,18 @@
   				</a>
   			</div>
   			<div id="navbar" class="collapse navbar-collapse">
-  				<ul class="nav navbar-nav">
+  				<ul class="nav navbar-nav" id="nav-links">
   					<li><a href="home">Home</a></li>
   					<li><a href="/">All</a></li>
+  				<script type="text/template" id="nav-template">
+  					<% if (currentUser) { %>
+  					<li><a href="/profile">Profile</a></li>
+              		<li><a href="/logout">Log Out</a></li>
+              		<% } else { %>	
   					<li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
   					<li><a href="#" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+					<% } %>
+          		</script>
   				</ul>
   			</div><!--/.nav-collapse -->
   		</div>
@@ -69,32 +76,31 @@
   		</div>
   	</div>
 
-  	<!-- login modal -->
-  	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
-  		<div class="modal-dialog" role="document">
-  			<div class="modal-content">
-  				<div class="modal-header">
-  					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  					<h4 class="modal-title" id="myModalLabel">Log In</h4>
-  				</div>
-  					<form method="post" id="loginForm" action="/login">
-  					<div class="modal-body">
-  						<div class="form-group">
-  							<input type="email" name="user[userName]" class="form-control" placeholder="User Name" required>
-  						</div>
-  						<div class="form-group">
-  							<input type="password" name="user[password]" class="form-control" placeholder="Password" required>
-  						</div>
-  					</div>
-  					<div class="modal-footer">
-  						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  						<input type="submit" value="Log In" class="btn btn-primary">
-  					</div>
-  				</form>
-  			</div>
-  		</div>
-  	</div>
-
+  <!-- login modal -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Log In</h4>
+        </div>
+        <form method="post" id="loginForm" action="/login">
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="email" name="user[email]" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <input type="password" name="user[password]" class="form-control" placeholder="Password" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" value="Log In" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   	<div class="container">
   		
   		<!-- featured design sections -->
@@ -205,8 +211,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
     <!-- imagesloaded.js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/johnpolacek/imagefill.js/master/js/jquery-imagefill.js"></script>
     <!-- custom javascript -->
-    <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/nav.js"></script>
+    <!-- // <script type="text/javascript" src="../scripts/script.js"></script> -->
   </body>
 </html>
