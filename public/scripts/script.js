@@ -57,6 +57,7 @@ $(function() {
 
         // prepends new artpost to the view
         $('.newly-added').prepend($postHtml);
+        document.location.reload(true);
       });
     },
 

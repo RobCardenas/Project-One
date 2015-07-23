@@ -49,6 +49,10 @@ h2.featured {
 	margin: 60px 0 0 0;
 }
 
+.submission-form {
+	clear: both;
+}
+
 .welcome-msg {
 	margin-left: 10px;
 }
@@ -131,6 +135,7 @@ footer ul li {
 .footer-div {
 	background: #24292c;
 	margin-top: 30px;
+	clear: both;
 }
 
 /*media queries*/
@@ -188,7 +193,7 @@ footer ul li {
     color: #f10101;  
 }
 .my-valid-class {
-    color: #58b255; 
+    color: #3093cf; 
 }
 
 

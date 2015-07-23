@@ -19,7 +19,7 @@ app.use(session({
   saveUninitialized: true,
   resave: true,
   secret: config.SESSION_SECRET,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 60000 * 30}
 }));
 
 // middleware to manage sessions
