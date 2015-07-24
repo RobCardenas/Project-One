@@ -2,7 +2,7 @@
 
 ## DESCRIPTION
 
-I run a indie t-shirt line and it can be difficult to find new artists to collaborate with. You can spend hours browsing dribbble.com or deviantart since those sites attract designers in all sorts of genres. Merch-connect only focuses on featuring art from artists who do merch design for bands and indie clothing lines.
+I run a indie t-shirt line and it can be difficult to find new artists to collaborate with. You can spend hours browsing dribbble.com or deviantart since those sites attract designers in all sorts of genres. Merch-connect only focuses on featuring art from underground designers who do merch design for bands and indie clothing lines.
 
 **Technologies applied to this project:**
 

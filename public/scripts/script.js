@@ -1,26 +1,5 @@
 $(function() {
 
-      // init Masonry after all images have loaded
-  var $grid = $('.newly-added').imagesLoaded( function() {
-    $grid.masonry({
-      itemSelector: '.art-images',
-      columnWidth: '.art-images',
-      gutter: '.gutter-sizer',
-      percentPosition: true,
-      isAnimated: !Modernizr.csstransitions
-    });
-  });
-
-  $('#signUpForm').validate({
-       errorClass: "my-error-class",
-       validClass: "my-valid-class"
-    });
-  $('#loginForm').validate({
-       errorClass: "my-error-class",
-       validClass: "my-valid-class"
-    });
-
-
   // postsController holds functionality
   var postsController = {
     
@@ -41,6 +20,7 @@ $(function() {
           // prepend newly added post to HTML to page
           $('.newly-added').prepend($postHtml);
         });
+        postsController.addEventHandlers();
       });
     },
 
@@ -58,6 +38,58 @@ $(function() {
         // prepends new artpost to the view
         $('.newly-added').prepend($postHtml);
         document.location.reload(true);
+      });
+    },
+
+    // add event-handlers 
+    addEventHandlers: function() {
+        //lightbox overlay
+      var $overlay = $('<div id="awardsOverlay"></div>');
+        var $image = $("<img>");
+
+        $overlay.append($image);
+
+        $("body").append($overlay);
+
+        $("#imageGallery a").click(function(event){
+          event.preventDefault();
+          var $href = $(this).attr("href");
+          $image.attr("src", $href);
+          
+          $overlay.show();
+        });
+
+        $overlay.click(function(){
+          $overlay.hide();
+        });
+
+      //vote counter
+      var votes = 0;
+        $(".glyphicon-thumbs-up" ).on( "click", function(event) {
+          event.preventDefault();
+          votes += 1;
+          $(this).html(votes);
+      });
+
+      // init Masonry after all images have loaded
+      var $grid = $('.newly-added').imagesLoaded( function() {
+        $grid.masonry({
+        itemSelector: '.art-images',
+        columnWidth: '.art-images',
+        gutter: '.gutter-sizer',
+        percentPosition: true,
+        isAnimated: !Modernizr.csstransitions
+      });
+    });
+
+      // jQuery validation for signup and login forms
+      $('#signUpForm').validate({
+         errorClass: "my-error-class",
+         validClass: "my-valid-class"
+      });
+      $('#loginForm').validate({
+         errorClass: "my-error-class",
+         validClass: "my-valid-class"
       });
     },
 
@@ -106,6 +138,10 @@ $(function() {
         $('.modal:visible').each(centerModal);
     });
 })(jQuery);
+
+
+
+
 
 
 
