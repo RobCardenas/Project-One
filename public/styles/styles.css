@@ -66,6 +66,24 @@ h2.featured {
 	cursor: pointer;
 }
 
+/* OVERLAY */ 
+
+#awardsOverlay {
+  background: rgba(0,0,0,0.9);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+}
+
+#awardsOverlay img {
+  margin-top: 5%;
+  max-height: 85%; 
+}
+
 
 /* submission form */
 
@@ -196,27 +214,8 @@ footer ul li {
     color: #3093cf; 
 }
 
-/* OVERLAY */ 
 
-#awardsOverlay {
-  background: rgba(0,0,0,0.7);
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: none;
-  text-align: center;
-}
 
-#awardsOverlay img {
-  margin-top: 5%;
-  max-height: 85%; 
-}
-
-#imageGallery a {
-	cursor:	crosshair;
-}
 
 
 

@@ -15,7 +15,7 @@ I run a indie t-shirt line and it can be difficult to find new artists to collab
 
 You will each need to turn in an individual project, but you will move faster and learn more if you take time to pair program with other students.
 
-## CORE REQUIREMENTS
+## TO WORK ON THIS REPO FOLLOW THESE STEPS
 
 ** From your terminal type: **
 * Clone this repo git clone https://github.com/RobCardenas/Project-One.git
@@ -23,4 +23,6 @@ You will each need to turn in an individual project, but you will move faster an
 * npm install --save
 * voila
 
+
+https://merch-connect.herokuapp.com/
 # ![](https://raw.githubusercontent.com/RobCardenas/Project-One/master/public/img/project-one-screenshot.png) 
