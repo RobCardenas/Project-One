@@ -68,7 +68,7 @@ $(function() {
         $(".glyphicon-thumbs-up" ).on( "click", function(event) {
           event.preventDefault();
           votes += 1;
-          $(this).html(votes);
+          $(this).html(' ' + votes);
       });
 
       // init Masonry after all images have loaded
